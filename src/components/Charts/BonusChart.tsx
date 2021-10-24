@@ -1,6 +1,6 @@
 import React from 'react';
 import { GetCompRange } from '../graphql/types';
-import { PercentileBarChart } from './PercentileBarChat';
+import { PercentileBarChart } from './PercentileBarChart';
 
 const useBonusChartData = ({ getRestaurantBonusRanges }: GetCompRange) => {
   const hookfishRange = getRestaurantBonusRanges[0].range;

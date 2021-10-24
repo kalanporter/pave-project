@@ -56,21 +56,8 @@ export const LevelChart = ({ data }: { data: GetCompRange }) => {
         margin={{ top: 20, right: 30, left: 30, bottom: 30 }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis
-          dataKey="name"
-          label={{
-            dy: 70,
-            value: 'Percentile',
-          }}
-        />
-        <YAxis
-          label={{
-            dx: -50,
-            dy: -30,
-            angle: -90,
-            value: 'USD',
-          }}
-        />
+        <XAxis dataKey="name" label={{ dy: 70, value: 'Percentile' }} />
+        <YAxis label={{ dx: -50, dy: -30, angle: -90, value: 'USD' }} />
         <Tooltip />
         <Legend align="left" />
         <Bar dataKey="Hookfish L1" fill="#001b56" />

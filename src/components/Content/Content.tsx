@@ -38,7 +38,8 @@ export const Content = () => {
     <Grid className={classes.content}>
       <Query query={GET_COMP_RANGES}>
         {({ loading, data }: { loading: boolean; data: GetCompRange }) => {
-          return !loading ? (
+          if (loading) return null;
+          return (
             <Grid
               container
               alignItems="center"
@@ -53,7 +54,7 @@ export const Content = () => {
               <DepartmentChart data={data} />
               <LevelChart data={data} />
             </Grid>
-          ) : null;
+          );
         }}
       </Query>
     </Grid>

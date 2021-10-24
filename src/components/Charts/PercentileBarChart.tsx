@@ -3,12 +3,13 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/styles';
 import Typography from '@material-ui/core/Typography';
 import {
-  AreaChart,
-  Area,
+  BarChart,
+  Bar,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
+  Legend,
 } from 'recharts';
 
 const useStyles = makeStyles(() => ({
@@ -23,7 +24,7 @@ const useStyles = makeStyles(() => ({
 
 export type ChartData = { name: string; hookfish: number; gamine: number }[];
 
-export const PercentileAreaChart = ({
+export const PercentileBarChart = ({
   chartData,
   title,
 }: {
@@ -36,7 +37,7 @@ export const PercentileAreaChart = ({
       <Typography variant="h2" className={classes.text}>
         {title}
       </Typography>
-      <AreaChart
+      <BarChart
         width={1000}
         height={400}
         data={chartData}
@@ -44,21 +45,12 @@ export const PercentileAreaChart = ({
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" label={{ dy: 20, value: 'Percentile' }} />
-        <YAxis label={{ dx: -40, dy: -30, angle: -90, value: 'USD' }} />
+        <YAxis label={{ dx: -50, dy: -30, angle: -90, value: 'USD' }} />
         <Tooltip />
-        <Area
-          type="monotone"
-          dataKey="hookfish"
-          stroke="#001b56"
-          fill="#001b56"
-        />
-        <Area
-          type="monotone"
-          dataKey="gamine"
-          stroke="#13b8a6"
-          fill="#13b8a6"
-        />
-      </AreaChart>
+        <Legend align="left" />
+        <Bar dataKey="hookfish" fill="#001b56" />
+        <Bar dataKey="gamine" fill="#13b8a6" />
+      </BarChart>
     </Grid>
   );
 };

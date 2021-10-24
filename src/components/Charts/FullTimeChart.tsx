@@ -1,6 +1,6 @@
 import React from 'react';
 import { GetCompRange } from '../graphql/types';
-import { PercentileAreaChart } from './PercentileAreaChart';
+import { PercentileBarChart } from './PercentileBarChart';
 
 const useFullTimeChartData = ({ getRestaurantCompRanges }: GetCompRange) => {
   const hookfishRange = getRestaurantCompRanges[0].employmentTypeRange[1].range;
@@ -18,7 +18,7 @@ const useFullTimeChartData = ({ getRestaurantCompRanges }: GetCompRange) => {
 export const FullTimeChart = ({ data }: { data: GetCompRange }) => {
   const { chartData } = useFullTimeChartData(data);
   return (
-    <PercentileAreaChart
+    <PercentileBarChart
       title="Full Time Total Compensation Percentiles"
       chartData={chartData}
     />
