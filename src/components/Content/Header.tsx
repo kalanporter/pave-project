@@ -15,9 +15,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     backgroundColor: theme.palette.white.main,
   },
   buttonContainer: {
+    marginLeft: 15,
     marginTop: 'auto',
     marginBottom: 'auto',
-    marginLeft: 15,
     color: theme.palette.primary.main,
   },
   icon: {
